@@ -7,68 +7,7 @@
     android:background="#a6767c"
     tools:context=".Register">
 
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="171dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginBottom="29dp"
-        app:layout_constraintBottom_toTopOf="@+id/fname_reg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.42"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logo" />
-
-    <EditText
-        android:id="@+id/fname_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="First Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/lname_reg"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <EditText
-        android:id="@+id/lname_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="14dp"
-        android:ems="10"
-        android:hint="Last Name"
-        android:inputType="textPersonName"
-        app:layout_constraintBottom_toTopOf="@+id/email_reg"
-        app:layout_constraintStart_toStartOf="@+id/fname_reg"
-        app:layout_constraintTop_toBottomOf="@+id/fname_reg" />
-
-    <EditText
-        android:id="@+id/email_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="15dp"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
-        app:layout_constraintBottom_toTopOf="@+id/password_reg"
-        app:layout_constraintStart_toStartOf="@+id/lname_reg"
-        app:layout_constraintTop_toBottomOf="@+id/lname_reg" />
-
-    <EditText
-        android:id="@+id/password_reg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="20dp"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toTopOf="@+id/phone_reg"
-        app:layout_constraintStart_toStartOf="@+id/email_reg"
-        app:layout_constraintTop_toBottomOf="@+id/email_reg" />
-
+    <!--
     <EditText
         android:id="@+id/phone_reg"
         android:layout_width="wrap_content"
@@ -80,25 +19,86 @@
         app:layout_constraintBottom_toTopOf="@+id/register_btn"
         app:layout_constraintStart_toStartOf="@+id/password_reg"
         app:layout_constraintTop_toBottomOf="@+id/password_reg" />
+-->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="213dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginBottom="46dp"
+        app:layout_constraintBottom_toTopOf="@+id/fname_reg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/fname_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="11dp"
+        android:layout_marginBottom="24dp"
+        android:ems="10"
+        android:hint="First Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/lname_reg"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+    <EditText
+        android:id="@+id/lname_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="Last Name"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/email_reg"
+        app:layout_constraintStart_toStartOf="@+id/fname_reg"
+        app:layout_constraintTop_toBottomOf="@+id/fname_reg" />
+
+    <EditText
+        android:id="@+id/email_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="21dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        app:layout_constraintBottom_toTopOf="@+id/password_reg"
+        app:layout_constraintStart_toStartOf="@+id/lname_reg"
+        app:layout_constraintTop_toBottomOf="@+id/lname_reg" />
+
+    <EditText
+        android:id="@+id/password_reg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="Password"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/register_btn"
+        app:layout_constraintStart_toStartOf="@+id/email_reg"
+        app:layout_constraintTop_toBottomOf="@+id/email_reg" />
 
     <Button
         android:id="@+id/register_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="37dp"
+        android:layout_marginBottom="30dp"
         android:onClick="saveUser"
         android:text="Register"
         app:layout_constraintBottom_toTopOf="@+id/has_account"
-        app:layout_constraintEnd_toEndOf="@+id/phone_reg"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="@+id/phone_reg"
-        app:layout_constraintTop_toBottomOf="@+id/phone_reg" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/password_reg" />
 
     <TextView
         android:id="@+id/has_account"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="120dp"
+        android:layout_marginBottom="39dp"
         android:text="Already have an account?"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

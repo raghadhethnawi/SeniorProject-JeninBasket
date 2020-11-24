@@ -36,7 +36,7 @@ public class Register extends AppCompatActivity {
     private static final String LastName_KEY = "last_name";
     public static final String Username_KEY = "username";
     private static final String Password_KEY = "password";
-    private static final String PhoneNumber_KEY = "phone_number";
+    //private static final String PhoneNumber_KEY = "phone_number";
 
     private EditText first_name, last_name, password, phone_number;
     public EditText email;
@@ -66,7 +66,7 @@ public class Register extends AppCompatActivity {
         last_name = (EditText) findViewById(R.id.lname_reg);
         email = (EditText) findViewById(R.id.email_reg);
         password = (EditText) findViewById(R.id.password_reg);
-        phone_number = (EditText) findViewById(R.id.phone_reg);
+        //phone_number = (EditText) findViewById(R.id.phone_reg);
 
         register_btn = (Button) findViewById(R.id.register_btn);
 
@@ -96,8 +96,15 @@ public class Register extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         //User created
+
+
+                        // Add to collection
+
+
                         // Redirect to the home page ------Importantttt
                         startActivity(new Intent(Register.this, Login.class));
+
+
                     }else {
                         Toast.makeText(Register.this, "something went wrong, please try again", Toast.LENGTH_SHORT).show();
                     }
