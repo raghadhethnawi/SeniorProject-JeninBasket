@@ -37,7 +37,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openRegisterActivity(){
-        Intent intent = new Intent(this, CategoriesActivity.class);
+        Intent intent = new Intent(this, Register.class);
         startActivity(intent);
     }
 

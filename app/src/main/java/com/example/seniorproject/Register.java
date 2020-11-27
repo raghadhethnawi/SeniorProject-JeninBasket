@@ -27,6 +27,7 @@ import java.util.Map;
 public class Register extends AppCompatActivity {
 
     Button register_btn;
+    String f_name, l_name, e_mail, pass;
 
     private FirebaseAuth mFirebaseAuth;
 
@@ -84,10 +85,10 @@ public class Register extends AppCompatActivity {
     }
 
     public void saveUser(View v){
-        String f_name = first_name.getText().toString();
-        String l_name = last_name.getText().toString();
-        String e_mail = email.getText().toString();
-        String pass = password.getText().toString();
+         f_name = first_name.getText().toString();
+         l_name = last_name.getText().toString();
+         e_mail = email.getText().toString();
+         pass = password.getText().toString();
         //String phone_num = phone_number.getText().toString();
 
         if (!f_name.isEmpty() && !l_name.isEmpty() && !e_mail.isEmpty() && !pass.isEmpty()){
@@ -99,6 +100,34 @@ public class Register extends AppCompatActivity {
 
 
                         // Add to collection
+                        Map<String, Object> user = new HashMap<>();
+                        user.put(FirstName_KEY, f_name);
+                        user.put(LastName_KEY, l_name);
+                        user.put(Username_KEY, e_mail);
+                        user.put(Password_KEY, pass);
+
+                        first_name.getText().clear();
+                        last_name.getText().clear();
+                        email.getText().clear();
+                        password.getText().clear();
+
+
+                        db.collection("Users").document(e_mail).set(user)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void aVoid) {
+                                        Toast.makeText(Register.this, "User saved", Toast.LENGTH_SHORT).show();
+                                    }
+                                })
+                                .addOnFailureListener(new OnFailureListener() {
+                                    @Override
+                                    public void onFailure(@NonNull Exception e) {
+                                        Toast.makeText(Register.this, "Error!", Toast.LENGTH_SHORT).show();
+                                        Log.d(TAG, e.toString());
+                                    }
+                                })
+                        ;
+
 
 
                         // Redirect to the home page ------Importantttt
