@@ -81,26 +81,26 @@ public class Login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
-                                startActivity(new Intent(Login.this, MainActivity.class));
+                                startActivity(new Intent(Login.this, CategoriesActivity.class));
                             }else{
-                                Toast.makeText(Login.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Login.this, " Something went wrong ", Toast.LENGTH_SHORT).show();
                             }
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
-                            Toast.makeText(Login.this, "Error" + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, " Error: " + e.getLocalizedMessage(), Toast.LENGTH_SHORT).show();
                         }
                     }).addOnCanceledListener(new OnCanceledListener() {
                         @Override
                         public void onCanceled() {
-                            Toast.makeText(Login.this, "Canceled, try again!", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(Login.this, " Canceled! ", Toast.LENGTH_SHORT).show();
                         }
                     })
                     ;
                 }else
                 {
-                    Toast.makeText(Login.this, "Please fill up all the values", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Login.this, " Please fill up all the values ", Toast.LENGTH_SHORT).show();
                 }
             }
         });
